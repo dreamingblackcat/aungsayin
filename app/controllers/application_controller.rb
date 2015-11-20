@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
     end
 
     def flash_user
-      flash[:volunteer] = "Thanks for volunteering with us. You will be able to help us after we confirmed you as moderator. Stay tuned!"
+      if current_user && !current_user.moderator? || !current_user.super_admin?
+        flash[:volunteer] = "Thanks for volunteering with us. You will be able to help us after we confirmed you as moderator. Stay tuned!"
+      end
     end
 end

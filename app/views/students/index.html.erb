@@ -41,6 +41,6 @@
 <br>
 <%= paginate @students %>
 
-<% unless current_user && current_user.moderator? %>
+<% if current_user && current_user.moderator? %>
   <%= link_to 'New Student', new_student_path, class: 'btn btn-primary btn-rounded' %>
 <% end %>
