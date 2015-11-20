@@ -7,3 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+
+puts 'inserting students..'
+Student.destroy_all
+CreateDummyStudentService.new.call
+puts 'done'
