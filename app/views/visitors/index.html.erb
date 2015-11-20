@@ -1,38 +1,41 @@
 <!-- Page Content -->
 <div class="container">
-
+    <h3 class="text-center">Let's Loot At Exam Results</h3>
     <div class="row">
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#by_roll" data-toggle="tab">By Roll Number</a></li>
-          <li><a href="#by_name" data-toggle="tab">By Name</a></li>
-          <li><a href="#by_year_major" data-toggle="tab">By Year and Major</a></li>
-        </ul>
+        <div class="col-md-6 col-md-offset-3 panel">
+            <br>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#by_roll" data-toggle="tab">By Roll Number</a></li>
+              <li><a href="#by_name" data-toggle="tab">By Name</a></li>
+              <li><a href="#by_year_major" data-toggle="tab">By Year and Major</a></li>
+            </ul>
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div class="tab-pane active" id="by_roll">
-              <%= form_tag(search_students_path, method: :get) do %>
-                <%= text_field_tag "search[roll_no]", nil, placeholder: "enter roll number" %>
-                <%= submit_tag "Search", class: 'btn btn-success' %>
-              <% end %>
-          </div>
-          <div class="tab-pane" id="by_name">
-              <%= form_tag(search_students_path, method: :get) do %>
-                <%= text_field_tag "search[name_en]", nil, placeholder: "enter name in english" %>
-                <%= submit_tag "Search", class: 'btn btn-success' %>
-              <% end %>
-          </div>
-          <div class="tab-pane" id="by_year_major">
-              <%= form_tag(search_students_path, method: :get) do %>
-                <%= select_tag "search[year]", options_for_select([["first", 1], ["second", 2], ["third", 3],["fourth", 4]]) %>
-                <%= select_tag "search[major]", options_for_select(major_options_array) %>
-                <%= submit_tag "Search", class: 'btn btn-success' %>
-              <% end %>
-          </div>
-        </div>
-        <div class="col-md-6 col-md-offset-3 panel-primary">
-         
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane active" id="by_roll">
+                  <%= form_tag(search_students_path, method: :get) do %>
+                    <%= text_field_tag "search[roll_no]", nil, placeholder: "enter roll number" %>
+                    <%= submit_tag "Search", class: 'btn btn-success' %>
+                  <% end %>
+              </div>
+              <div class="tab-pane" id="by_name">
+                  <%= form_tag(search_students_path, method: :get) do %>
+                    <%= text_field_tag "search[name_en]", nil, placeholder: "enter name in english" %>
+                    <%= submit_tag "Search", class: 'btn btn-success' %>
+                  <% end %>
+              </div>
+              <div class="tab-pane" id="by_year_major">
+                  <%= form_tag(search_students_path, method: :get) do %>
+                    <%= label_tag "Year" %>
+                    <%= select_tag "search[year]", options_for_select([["first", 1], ["second", 2], ["third", 3],["fourth", 4]]), class: 'form-control' %>
+                    <%= label_tag "Major" %>
+                    <%= select_tag "search[major]", options_for_select(major_options_array), class: 'form-control' %>
+                    <br>
+                    <%= submit_tag "Search", class: 'btn btn-success' %>
+                  <% end %>
+              </div>
+            </div>
         </div>
     </div>
 
@@ -40,7 +43,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
+                <p>Copyright &copy; aungsayin.com 2015</p>
             </div>
         </div>
         <!-- /.row -->

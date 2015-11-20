@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
+  before_action :authorize_user, only: [:edit, :update]
+  before_action :authorize_super_admin, only: [:destroy]
   # GET /students
   # GET /students.json
   def index
@@ -74,5 +76,13 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.permit(:search).require(:student).permit(:roll_no, :name_en, :name_my, :exam_status, :distinctions, :major, :year)
+    end
+
+    def authorize_user
+      redirect_to :back, error: "You can't perform this action" unless current_user.present?
+    end
+
+    def authorize_super_admin
+      redirect_to :back, error: "You can't perform this action" unless current_user.present?
     end
 end
