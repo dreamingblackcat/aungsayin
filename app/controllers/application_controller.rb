@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
     end
 
     def authorize_user
-      redirect_to :back, error: "You can't perform this action" unless current_user.present?
+      redirect_to :back, error: "You can't perform this action" unless current_user.present? && current_user.moderator?
     end
 
     def authorize_super_admin
-      redirect_to :back, error: "You can't perform this action" unless current_user.present?
+      redirect_to :back, error: "You can't perform this action" unless current_user.present? && current_user.super_admin?
     end
 end
