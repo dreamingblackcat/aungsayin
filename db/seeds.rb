@@ -9,6 +9,6 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
 puts 'inserting students..'
-Student.destroy_all
+Student.delete_all
 CreateDummyStudentService.new.call
 puts 'done'
