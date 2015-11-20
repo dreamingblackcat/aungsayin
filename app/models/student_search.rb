@@ -6,7 +6,6 @@ class StudentSearch < OpenStruct
   include ActiveModel::Conversion
   extend  ActiveModel::Naming
  
-  validates_presence_of :name_en, :major, :year
  
   # you can do cool things here, just make sure you call super so ostruct 
   # takes all those hash params and makes them methods

@@ -61,6 +61,10 @@ class StudentsController < ApplicationController
     end
   end
 
+  def search
+    @students = Student.search(@search).page(params[:page])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
@@ -69,6 +73,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:roll_no, :name_en, :name_my, :exam_status, :distinctions, :major, :year)
+      params.permit(:search).require(:student).permit(:roll_no, :name_en, :name_my, :exam_status, :distinctions, :major, :year)
     end
 end
