@@ -25,6 +25,7 @@ gem 'unicorn'
 gem 'unicorn-rails'
 gem 'kaminari'
 gem 'figaro'
+gem 'faker'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -45,7 +46,6 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
