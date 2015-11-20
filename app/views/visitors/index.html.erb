@@ -13,12 +13,23 @@
         <div class="tab-content">
           <div class="tab-pane active" id="by_roll">
               <%= form_tag(search_students_path, method: :get) do %>
-                <%= text_field_tag "search[roll_no]", nil, placeholder: "enter name in english" %>
+                <%= text_field_tag "search[roll_no]", nil, placeholder: "enter roll number" %>
                 <%= submit_tag "Search", class: 'btn btn-success' %>
               <% end %>
           </div>
-          <div class="tab-pane" id="by_name">...</div>
-          <div class="tab-pane" id="by_year_major">...</div>
+          <div class="tab-pane" id="by_name">
+              <%= form_tag(search_students_path, method: :get) do %>
+                <%= text_field_tag "search[name_en]", nil, placeholder: "enter name in english" %>
+                <%= submit_tag "Search", class: 'btn btn-success' %>
+              <% end %>
+          </div>
+          <div class="tab-pane" id="by_year_major">
+              <%= form_tag(search_students_path, method: :get) do %>
+                <%= select_tag "search[year]", options_for_select([["first", 1], ["second", 2], ["third", 3],["fourth", 4]]) %>
+                <%= select_tag "search[major]", options_for_select(major_options_array) %>
+                <%= submit_tag "Search", class: 'btn btn-success' %>
+              <% end %>
+          </div>
         </div>
         <div class="col-md-6 col-md-offset-3 panel-primary">
          

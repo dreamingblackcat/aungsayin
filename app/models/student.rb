@@ -8,7 +8,7 @@ class Student < ActiveRecord::Base
     elsif search_keys[:name_my].present? then
       Student.where name_my: search_keys[:name_my]
     else
-      Student.where major: search_keys[:major], year: search_keys[:year]
+      Student.where major: search_keys[:major], year: search_keys[:year].to_i
     end
   end
 end
