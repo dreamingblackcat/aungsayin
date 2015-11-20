@@ -1,5 +1,7 @@
-Kmy
+Aungsayin
 ================
+
+Web application for creating and searching students exam result records for universities.
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
@@ -28,12 +30,21 @@ Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.
 
 Getting Started
 ---------------
+To install the application in your machine, first clone the repo. Then
+
+```sh
+bundle install
+```
+
+Create `application.yml` by referencing `application.yml.example`.
 
 Documentation and Support
 -------------------------
+On Progress....
 
 Issues
 -------------
+Please open a new issue if you find any bug.
 
 Similar Projects
 ----------------
@@ -43,6 +54,9 @@ Contributing
 
 Credits
 -------
+Special thanks to @winhtaikaung for inspiration and encouragement
 
 License
 -------
+
+MIT license
