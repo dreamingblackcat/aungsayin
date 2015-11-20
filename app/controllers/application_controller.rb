@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
     def persist_search
       @search = Search.new params[:search]
     end
+
+    def authorize_user
+      redirect_to :back, error: "You can't perform this action" unless current_user.present?
+    end
+
+    def authorize_super_admin
+      redirect_to :back, error: "You can't perform this action" unless current_user.present?
+    end
 end

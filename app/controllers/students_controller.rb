@@ -78,11 +78,4 @@ class StudentsController < ApplicationController
       params.permit(:search).require(:student).permit(:roll_no, :name_en, :name_my, :exam_status, :distinctions, :major, :year)
     end
 
-    def authorize_user
-      redirect_to :back, error: "You can't perform this action" unless current_user.present?
-    end
-
-    def authorize_super_admin
-      redirect_to :back, error: "You can't perform this action" unless current_user.present?
-    end
 end

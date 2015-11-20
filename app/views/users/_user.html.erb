@@ -1,2 +1,8 @@
 <td><%= link_to user.name, user %></td>
 <td><%= link_to user.email, user %></td>
+<td colspan="2">
+  <%= simple_form_for user do|f| %>
+    <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+    <%= f.submit "Save", class: 'btn btn-primary' %> 
+  <% end %>
+</td>
