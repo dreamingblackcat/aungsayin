@@ -1,5 +1,8 @@
 <div class="authform">
   <h3>Edit <%= resource_name.to_s.humanize %></h3>
+  <% unless user.role.present? %>
+    Thanks for volunteering with us. You will be able to help us after we confirmed you as moderator. Stay tuned!
+  <% end %>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
     <%= devise_error_messages! %>
     <div class="form-group">
