@@ -1,0 +1,16 @@
+# Please Change the Following to Suit Your need
+
+DB_USERNAME: "jj"
+DB_PASSWORD: "rootuser"
+
+# Used to generate super admin account
+ADMIN_NAME: ssyg
+ADMIN_EMAIL: admin@example.com
+ADMIN_PASSWORD: password
+
+# used in sending emails
+GMAIL_USERNAME: myaccount@gmail.com
+GMAIL_PASSWORD: my_gmail_password 
+
+DOMAIN_NAME: www.yoursite.com
+SECRET_KEY_BASE: run `rake secret` and paste the result here
