@@ -24,4 +24,5 @@ class ApplicationController < ActionController::Base
         flash[:volunteer] = "Thanks for volunteering with us. You will be able to help us after we confirmed you as moderator. Stay tuned!"
       end
     end
+
 end

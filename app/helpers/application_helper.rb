@@ -12,4 +12,5 @@ module ApplicationHelper
 
     super( objects, options )
   end
+
 end
