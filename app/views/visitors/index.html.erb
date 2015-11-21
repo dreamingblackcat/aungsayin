@@ -17,18 +17,21 @@
             <!-- Tab panes -->
             <div class="tab-content">
               <div class="tab-pane active" id="by_roll">
+                  <br>
                   <%= form_tag(search_students_path, method: :get) do %>
                     <%= text_field_tag "search[roll_no]", nil, placeholder: "enter roll number" %>
                     <%= submit_tag "Search", class: 'btn btn-success' %>
                   <% end %>
               </div>
               <div class="tab-pane" id="by_name">
+                  <br>
                   <%= form_tag(search_students_path, method: :get) do %>
                     <%= text_field_tag "search[name_en]", nil, placeholder: "enter name in english" %>
                     <%= submit_tag "Search", class: 'btn btn-success' %>
                   <% end %>
               </div>
               <div class="tab-pane" id="by_year_major">
+                  <br>
                   <%= form_tag(search_students_path, method: :get) do %>
                     <%= label_tag "Year" %>
                     <%= select_tag "search[year]", options_for_select([["first", 1], ["second", 2], ["third", 3],["fourth", 4]]), class: 'form-control' %>

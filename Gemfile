@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 gem 'figaro'
 gem 'faker'
 group :development do

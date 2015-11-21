@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Search Results</h1>
-
+<%= link_to "Back", root_url, class: 'btn btn-success' %>
 <% unless @students.empty? then %>
   <table class="table">
     <thead>
@@ -27,10 +27,6 @@
             <td><%= student.distinctions %></td>
             <td><%= student.major %></td>
             <td><%= student.year %></td>
-            <td><%= link_to 'Show', student %></td>
-            <td><%= link_to 'Edit', edit_student_path(student) %></td>
-            <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
         <% end %>
     
     </tbody>
