@@ -4,4 +4,4 @@ json.data do
     json.url student_url(student, format: :json)
   end
 end
-json.meta paginate(@students)
+json.meta paginate_api(@students)

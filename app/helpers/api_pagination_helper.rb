@@ -1,5 +1,5 @@
 module ApiPaginationHelper
-  def paginate(collection)
+  def paginate_api(collection)
     current_page_num = collection.current_page
     last_page_num = collection.total_pages
 
@@ -11,6 +11,8 @@ module ApiPaginationHelper
       :last => last_page(last_page_num)
     }
   end
+
+  private
 
   def first_page
     { :href => url_for(:page => 1, format: :json) }
