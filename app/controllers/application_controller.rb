@@ -12,15 +12,15 @@ class ApplicationController < ActionController::Base
     end
 
     def authorize_user
-      redirect_to :back, alert: "You can't perform this action" unless current_user.present? && current_user.moderator?
+      redirect_to root_url, alert: "You can't perform this action" unless current_user.present? && current_user.moderator?
     end
 
     def authorize_super_admin
-      redirect_to :back, alert: "You can't perform this action" unless current_user.present? && current_user.super_admin?
+      redirect_to root_url, alert: "You can't perform this action" unless current_user.present? && current_user.super_admin?
     end
 
     def flash_user
-      if current_user && !current_user.moderator? || !current_user.super_admin?
+      if current_user && current_user.is_volunteer?
         flash[:volunteer] = "Thanks for volunteering with us. You will be able to help us after we confirmed you as moderator. Stay tuned!"
       end
     end

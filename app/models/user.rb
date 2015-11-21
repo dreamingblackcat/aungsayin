@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   enum role: [:super_admin, :moderator]
 
+  def is_volunteer?
+    !moderator? && !super_admin?
+  end
 end
