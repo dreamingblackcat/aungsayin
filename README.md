@@ -8,6 +8,8 @@ provided by the [RailsApps Project](http://railsapps.github.io/).
 
 Rails Composer is supported by developers who purchase our RailsApps tutorials.
 
+A demo version of the application is [here](http://aungsayin.herokuapp.com/)
+
 Problems? Issues?
 -----------
 
